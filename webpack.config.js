@@ -1,4 +1,5 @@
 const path = require('path');
+const postcssPresetEnv = require('postcss-preset-env');
 
 module.exports = {
   mode: 'development',
@@ -20,18 +21,22 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            plugins: [
-              'transform-decorators-legacy',
-              'transform-class-properties',
-              'transform-object-rest-spread',
-              'transform-async-to-generator',
-            ],
-            presets: ['babel-preset-env', 'babel-preset-react', 'stage-1'],
+        use: 'babel-loader',
+      },
+      {
+        test: /\.style.js$/,
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1, modules: true } },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              parser: 'postcss-js',
+              plugins: () => [postcssPresetEnv()],
+            },
           },
-        },
+        ],
       },
       {
         test: /\.css$/,

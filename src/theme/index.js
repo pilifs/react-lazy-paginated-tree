@@ -1,4 +1,4 @@
-import defaultTheme from './defaultTheme';
-import minimalTheme from './minimalTheme';
+import defaultTheme from './default.style';
+import minimalTheme from './minimal.style';
 
 export { defaultTheme, minimalTheme };

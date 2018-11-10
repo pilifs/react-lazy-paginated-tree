@@ -2,9 +2,9 @@
 
 import React from 'react';
 import MUIListItemText from '@material-ui/core/ListItemText';
-import type { BodyProps, Node, Theme } from '../types';
+import type { BodyProps, Node } from '../types';
 
-const BodyText = ({ node, theme }: { node: Node, theme: Theme }) => (
+const BodyText = ({ node, theme }: { node: Node, theme: any }) => (
   <p style={theme.bodyTextStyle} className={theme.bodyTextClassName}>
     {node.name}
     &nbsp;

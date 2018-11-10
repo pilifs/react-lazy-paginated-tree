@@ -11,32 +11,6 @@ export type Node = {
   selected: boolean,
 };
 
-export type Theme = {
-  treeStyle: Object,
-  bodyStyle: Object,
-  bodyTextStyle: Object,
-  checkboxStyle: Object,
-  checkboxIconStyle: Object,
-  checkboxIconCheckedStyle: Object,
-  expanderStyle: Object,
-  listItemStyle: Object,
-  paginatorStyle: Object,
-  paginatorTextStyle: Object,
-  loadingStyle: Object,
-  loadingTextStyle: Object,
-  listStyle: Object,
-  bodyClassName: ?String,
-  bodyTextClassName: ?String,
-  checkboxClassName: ?String,
-  expanderClassName: ?String,
-  listClassName: ?String,
-  listItemClassName: ?String,
-  loadingClassName: ?String,
-  loadingTextClassName: ?String,
-  paginatorClassName: ?String,
-  paginatorTextClassName: ?String,
-};
-
 export type Cache = Object;
 
 export type Event = Object;
@@ -48,7 +22,7 @@ export type TreeProps = {
   parse?: Function,
   style?: Object, // equivalent to overriding theme.treeStyle
   className?: string | Object,
-  theme?: Theme,
+  theme?: any,
   indentWidth?: number,
   List?: any,
   ListItem?: any,
@@ -72,7 +46,7 @@ export type TreeProps = {
 export type TreeNodeProps = {
   depth: number,
   node: Node,
-  theme: Theme,
+  theme: any,
   indentWidth: number,
   List: any,
   ListItem: any,
@@ -102,7 +76,7 @@ export type TreeNodeState = {
 
 export type CheckboxProps = {
   checked: boolean,
-  theme: Theme,
+  theme: any,
   node: Node,
   onChange: Function,
   onKeyPress: Function,
@@ -110,14 +84,14 @@ export type CheckboxProps = {
 };
 
 export type BodyProps = {
-  theme: Theme,
+  theme: any,
   node: Node,
   onClick: Function,
   onKeyPress: Function,
 };
 
 export type ExpanderProps = {
-  theme: Theme,
+  theme: any,
   node: Node,
   onClick: Function,
   onKeyPress: Function,
@@ -125,7 +99,7 @@ export type ExpanderProps = {
 };
 
 export type PaginatorProps = {
-  theme: Theme,
+  theme: any,
   node: Node,
   onClick: Function,
   onKeyPress: Function,
@@ -134,7 +108,7 @@ export type PaginatorProps = {
 };
 
 export type ListItemProps = {
-  theme: Theme,
+  theme: any,
   node: Node,
   children: any,
   onClick: Function,
@@ -142,13 +116,13 @@ export type ListItemProps = {
 };
 
 export type ListProps = {
-  theme: Theme,
+  theme: any,
   node: Node,
   children: any,
 };
 
 export type LoadingProps = {
-  theme: Theme,
+  theme: any,
   node: Node,
   indentWidth: number,
   depth: number,
